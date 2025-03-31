@@ -17,7 +17,7 @@ public class InterestController {
     private final InterestService interestService;
 
     @GetMapping("/interest")
-    public ResponseEntity<Map<String, String>> interest(@RequestHeader("X-User-Id") String userId) {
+    public ResponseEntity<Map<String, String>> interest(@RequestParam("userId") String userId) {
         String interest = interestService.getInterest(Long.parseLong(userId));
 
         return ResponseEntity.ok(singletonMap("interest", interest));

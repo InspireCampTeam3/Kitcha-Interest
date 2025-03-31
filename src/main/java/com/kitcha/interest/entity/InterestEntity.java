@@ -8,7 +8,6 @@ import lombok.Data;
 @Data
 public class InterestEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
     private String interest;

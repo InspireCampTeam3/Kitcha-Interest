@@ -13,12 +13,13 @@ public class InterestService {
     private final InterestRepository interestRepository;
 
     public void setInterest(Long userId, InterestDto dto) throws RuntimeException {
-        InterestEntity interestEntity = interestRepository.findByUserId(userId);
+        InterestEntity interestEntity;
+
+        interestEntity = interestRepository.findByUserId(userId);
         if (interestEntity == null) {
             interestEntity = new InterestEntity();
             interestEntity.setUserId(userId);
         }
-
         interestEntity.setInterest(dto.getInterest());
         interestRepository.save(interestEntity);
     }
