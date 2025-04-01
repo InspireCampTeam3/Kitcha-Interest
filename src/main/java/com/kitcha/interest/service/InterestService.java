@@ -24,7 +24,7 @@ public class InterestService {
         }
         interestEntity.setInterest(dto.getInterest());
 //        interestRepository.save(interestEntity);
-        interestProducer.send("user", interestEntity);
+        interestProducer.send("interest", interestEntity);
     }
 
     public String getInterest(Long userId) {
